@@ -4287,6 +4287,8 @@ server <- function(input, output, session) {
     
     dummy$TimePoint <- gsub(pattern = "h", replacement = "", x = dummy$TimePoint)
     
+    dummy$TimePoint <- factor(dummy$TimePoint, levels = c("0.5", "2", "6", "12", "24", "48", "72"))
+    
     OrthoPlot <- ggplot(data = dummy, aes(TimePoint, Value))+
       ylab("log2(LFQ)")+
       xlab("Hours post-infection")+
@@ -4403,6 +4405,8 @@ server <- function(input, output, session) {
       colors <- c(colors_infantum, colors_major, colors_mexicana)
       
       plot_df$TimePoint <- gsub(pattern = "h", replacement = "",x = plot_df$TimePoint)
+      
+      plot_df$TimePoint <- factor(plot_df$TimePoint, levels = c("0.5", "2", "6", "12", "24", "48", "72"))
       
       OrthoPlot <- ggplot(data=plot_df, aes(x=TimePoint, y=Value,shape =Majority.protein.IDs,  group=Majority.protein.IDs,color = Majority.protein.IDs)) +
         geom_line(linewidth = 1)+

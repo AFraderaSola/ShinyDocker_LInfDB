@@ -41,36 +41,20 @@ ui <-  navbarPage(title = HTML("<b>LInfDB</b>: <i><u>L</u>eishmania</i> <u>I</u>
                   windowTitle = "Leishmania Infectome",
                   tabPanel("Welcome",
                            fluidRow(column(12,
-                                           h2("Abstract"),
-                                           p("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-                                             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-                                             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                                             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-                                             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))),
-                           fluidRow(column(12,
-                                           h3("LInfDB experimental design"))),
+                                           h4("Abstract"),
+                                           p("Leishmaniasis is a major public health problem, causing diseases ranging from self-healing skin lesions to life-threatening chronic infections. Understanding how Leishmania parasites evade the host defense system is crucial for understanding the different manifestations of the disease and for improving diagnostic tools and drug development. We performed high-resolution proteome profiling of Leishmania spp. across three species during macrophage infection and identified distinct temporal expression patterns. Clustering analysis revealed unique protein expression profiles for each Leishmania species, whereas pairwise enrichment analysis revealed specific up- and downregulation patterns at different infection stages. Our results confirmed known virulence factors and highlighted new ones, demonstrating how our dataset could be used. We validated the dataset by showing that deletion of putative L. mexicana virulence factors resulted in reduced stage differentiation capacity and infectivity."))),
                            fluidRow(column(1,
                                            br()),
-                                    column(10,
-                                           img(src = "Image_01.png",  height = "100%", width = "100%"),
-                                           HTML("<b>The Leishmania infectome screen quantifies <i>Leishmania spp.</i> and <i>M. musculus</i> proteomes at seven post-infection timepoints.</b>
-                                               Three <i>Leishmania spp.</i> were used to infect <i>M. musculus</i> BMDMs in quadruplets. Whole cell lysate proteome extracts were collected at
-                                                seven different hour post-infection timepoints and quantified with mass spectrometry. The bar plot represents the total number of 
-                                                <i>M. musculus</i> (grey) or <i>Leishmania spp.</i> (green, pink, and blue for <i>L. infantum</i>, <i>L. major</i>, 
-                                                and <i>L. mexicana</i>, respectively) quantified proteins at each experiment.")),
+                                    column(8,
+                                           img(src = "Image_01.png",  height = "75%", width = "75%")),
                                     column(1,
                                            br())),
                            fluidRow(column(12,
+                                           HTML("<h4>For more information please visit our publication at <a href=https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013934>PLOS Pathogens</a> </h4>"))),
+                           fluidRow(column(12,
                                            tags$hr(style="border-color: darkgrey;"))),
                            fluidRow(column(12,
-                                           strong("Quantitative MS analysis of infected macrophages identifies novel virulence factors in three different Leishmania species"),
+                                           strong("Quantitative proteomics of infected macrophages reveals novel Leishmania virulence factors"),
                                            br(),
                                            br(),
                                            p("Nicolas Hagedorn",tags$sup("1,+"),",",
@@ -78,22 +62,21 @@ ui <-  navbarPage(title = HTML("<b>LInfDB</b>: <i><u>L</u>eishmania</i> <u>I</u>
                                              "Melina Mitnacht",tags$sup("1"),",",
                                              "Tobias Gold",tags$sup("3"),",",
                                              "Ulrike Schleicher",tags$sup("3"),",",
-                                             "Falk Butter",tags$sup("2"),
-                                             "Christian J. Janzen",tags$sup("1"), 
+                                             "Falk Butter",tags$sup("2,#"),
+                                             "Christian J. Janzen",tags$sup("1,#"), 
                                              style = "font-size:10pt;"),
-                                           em("+ Indicates equal contribution, # Indicates correspondance,
-                                           1 Department of Cell & Developmental Biology, Biocenter, University of Würzburg, Würzburg, 97074, Germany
-                                           2 Institute of Molecular Virology and Cell Biology, Freidrich-Loeffler-Institute, Greifswald - Insel Riems, 17493, Germany
-                                           3 Microbiology Institute-Clinical Microbiology, Immunology and Hygiene, University Hospital Erlangen and Friedrich-Alexander-University, Erlangen, 91054, Germany
+                                           em("+ Indicates equal contribution, # Indicates correspondance", tags$br(),
+                                           "1 Department of Cell & Developmental Biology, Biocenter, University of Würzburg, Würzburg, 97074, Germany", tags$br(),
+                                           "2 Institute of Molecular Virology and Cell Biology, Freidrich-Loeffler-Institute, Greifswald - Insel Riems, 17493, Germany", tags$br(),
+                                           "3 Microbiology Institute-Clinical Microbiology, Immunology and Hygiene, University Hospital Erlangen and Friedrich-Alexander-University, Erlangen, 91054, Germany
                                               ",
                                               style = "font-size:9pt;"),
                                            br(),
                                            br(),
-                                           p("App created by Albert Fradera-Sola in December 2021", style = "font-size:10pt;"),
-                                           p("Comments and bug reports to the following e-mail: ", mailtoR(email = "A.FraderaSola@imb-mainz.de",
+                                           HTML("<h style=font-size:10pt > App created by Albert Fradera-Sola in December 2021. <b>Last update on April 2026</b></h>"),
+                                           p("Comments and bug reports to the following e-mail: ", mailtoR(email = "albert.fraderasola@dkfz-heidelberg.de",
                                                                                                            subject = "Comments and bugs: LinfDB shiny app",
-                                                                                                           text = "A.FraderaSola@imb-mainz.de"), style = "font-size:9pt;"),
-                                           em("Last update: June 2024", style = "font-size:9pt;")))),
+                                                                                                           text = "albert.fraderasola@dkfz-heidelberg.de"), style = "font-size:9pt;")))),
                   tabPanel(HTML("<i style=color:#A3C585 >L. infatum</i>"),
                            fluidRow(column(12,
                                            HTML("<h3><b>Data selection</b></h3>"))),

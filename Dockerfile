@@ -1,4 +1,4 @@
-FROM rocker/r-base:latest
+FROM rocker/r-base:4.5.1
 LABEL maintainer="AFraderaSola <A.FraderaSola@imb-mainz.de>"
 RUN apt-get update && apt-get install -y --no-install-recommends \
     sudo \
